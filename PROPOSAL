@@ -1,0 +1,16 @@
+We propose to add the notion of users and user permissions within our file system. The steps we will take to achieve these aims are listed below:
+
+ - create two files: users (stores usernames and permissions) and filePerms (associates permissions to files)
+ - create a login/chuser program which allows the user space to identify the current user, or the user to login to another user
+ - redefine execv to accept and pass permissions
+ - make init.cc exec to this login function to initialize the admin's permissions
+ - modify the shell to be aware of its current user
+ - modify ls and cat to handle permissions appropriately
+
+Let us know if you have any suggestions.
+
+Lindsey Kehlmann and Matthew Shin
+
+
+
+
