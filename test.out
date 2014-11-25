@@ -10,6 +10,7 @@ Pit::init requested:1000Hz, actual:1000Hz
 [] initialized root filesystem
 [] Let there be processes
 shell> ls
+admin ls
 chuser.c
 chuser
 test0.txt
@@ -32,53 +33,59 @@ f1.txt
 f2.txt
 panic
 shell> echo This is cool
+admin echo This is cool
 This is cool
 shell>     echo    I know    how  to         handle  spaces   
+admin echo I know how to handle spaces
 I know how to handle spaces
 shell> cat f1.txt
+admin cat f1.txt
+f1.txt
 This is f1
 It contains text
+Cat is done
 shell>  test1.txt
-this file is test1
-111
-111
+admin test1.txt
+Cat is done
 shell> cat f1.txt f2.txt
+admin cat f1.txt f2.txt
+f1.txt
 This is f1
 It contains text
+f2.txt
 0
 11
 222
 3333
 44444
 555555
+Cat is done
 shell> f2.txt f1.txt
-0
-11
-222
-3333
-44444
-555555
+admin f2.txt f1.txt
+Cat is done
 shell> cat f1.txt f2.txt f1.txt f2.txt
+admin cat f1.txt f2.txt f1.txt f2.txt
+f1.txt
 This is f1
 It contains text
+f2.txt
 0
 11
 222
 3333
 44444
 555555
+f1.txt
 This is f1
 It contains text
+f2.txt
 0
 11
 222
 3333
 44444
 555555
-shell> gcc
-gcc: command not found
-shell> cat notThere
-cat: notThere: No such file or directory
-shell> shutdown
-
+Cat is done
+[PANIC] page fault @ 158d9b9c
 *** System Shutdown ***
+----> timeout <----

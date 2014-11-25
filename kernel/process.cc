@@ -176,7 +176,7 @@ long Process::execv(const char* fileName, SimpleQueue<const char*> *args, long a
 
     *(long*)uargs = 0xf0000000;
     *(long*)users = 0xff000000;
-    *(long*)uargc = argc; 
+    *(long*)uargc = argc - 1; 
     
     /* clear resources */
     resources->closeAll();

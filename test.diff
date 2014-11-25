@@ -1,4 +1,5 @@
-12a13,20
+12a13,21
+> admin ls
 > chuser.c
 > chuser
 > test0.txt
@@ -7,12 +8,57 @@
 > test3.txt
 > filePerm.txt
 > users.txt
-33,35c41,44
+26a36
+> admin echo This is cool
+28a39
+> admin echo I know how to handle spaces
+30a42,43
+> admin cat f1.txt
+> f1.txt
+33,35c46,49
 < shell>  f1.txt
 < This is f1
 < It contains text
 ---
+> Cat is done
 > shell>  test1.txt
-> this file is test1
-> 111
-> 111
+> admin test1.txt
+> Cat is done
+36a51,52
+> admin cat f1.txt f2.txt
+> f1.txt
+38a55
+> f2.txt
+44a62
+> Cat is done
+46,51c64,65
+< 0
+< 11
+< 222
+< 3333
+< 44444
+< 555555
+---
+> admin f2.txt f1.txt
+> Cat is done
+52a67,68
+> admin cat f1.txt f2.txt f1.txt f2.txt
+> f1.txt
+54a71
+> f2.txt
+60a78
+> f1.txt
+62a81
+> f2.txt
+69,74c88,89
+< shell> gcc
+< gcc: command not found
+< shell> cat notThere
+< cat: notThere: No such file or directory
+< shell> shutdown
+< 
+---
+> Cat is done
+> [PANIC] page fault @ 158d9b9c
+75a91
+> ----> timeout <----

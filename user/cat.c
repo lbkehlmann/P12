@@ -1,9 +1,11 @@
 #include "libc.h"
 
-int main(int argc, char** argv) {
+int main(int argc, char** argv, char* user) {
     
     for(int i = 1; i < argc; i++){
     	char* fileName = argv[i];
+        puts(fileName);
+        puts("\n");
     	long file = open(fileName);
     	if(file == -1001){
     		puts("cat: ");
@@ -25,5 +27,6 @@ int main(int argc, char** argv) {
     	}
     }
     
+    puts("Cat is done\n");
     return 0;
 }

@@ -71,13 +71,40 @@ char* stripSpace(char* string){
     return newString;
 }
 
-int main(/*,//,const char * user*/) {
+char* concat(const char * s1, const char * s2){
+    int l1 = 0;
+    int l2 = 0;
+
+    while(s1[l1] != 0){
+        l1++;
+    }
+
+    while(s2[l2] != 0){
+        l2++;
+    }
+
+    char * ret = malloc(l1 + l2);
+
+    int i = 0;
+    for(; i < l1; i++){
+        ret[i] = s1[i];
+    }
+    for(; i < l1 + l2; i++){
+        ret[i] = s2[i-l1];
+    }
+    ret[i] = 0;
+
+    return ret;
+
+}
+
+int main(long d1, long d2, const char * user) {
     while (1) {
       
-        puts("shell> "); 
+        puts("shell> ");
+
         char* in = gets();
         in = stripSpace(in);
-        char** tokens = tokenize(in);
         
         /*
         int i = 0;
@@ -87,13 +114,21 @@ int main(/*,//,const char * user*/) {
             i++;
         }
         */
-        if(tokens[0][0] != 0){
+        if(in[0] != 0){
+            in = concat(" ", in);
+            in = concat(user, in);
+            puts(in);
+
+            char** tokens = tokenize(in);
+            
+            puts("\n");
+
             int id = fork();
             if(id == 0){
 
-                long exec = execv(tokens[0], tokens);
+                long exec = execv(tokens[1], tokens);
                 if(exec == -1001){
-                    notFound(tokens[0]);
+                    notFound(tokens[1]);
                 }
 
                 puts("\n");
