@@ -10,6 +10,14 @@ Pit::init requested:1000Hz, actual:1000Hz
 [] initialized root filesystem
 [] Let there be processes
 shell> ls
+chuser.c
+chuser
+test0.txt
+test1.txt
+test2.txt
+test3.txt
+filePerms.tx
+users.txt
 shutdown
 shutdown.c
 shell.c
