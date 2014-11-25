@@ -104,7 +104,7 @@ int main(long d1, long d2, const char * user) {
         puts("shell> ");
 
         char* in = gets();
-        in = stripSpace(in);
+        char * nin = stripSpace(in);
         
         /*
         int i = 0;
@@ -115,11 +115,11 @@ int main(long d1, long d2, const char * user) {
         }
         */
         if(in[0] != 0){
-            in = concat(" ", in);
-            in = concat(user, in);
-            puts(in);
+            nin = concat(" ", nin);
+            nin = concat(user, nin);
+            puts(nin);
 
-            char** tokens = tokenize(in);
+            char** tokens = tokenize(nin);
             
             puts("\n");
 

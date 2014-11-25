@@ -86,6 +86,14 @@ f2.txt
 44444
 555555
 Cat is done
-[PANIC] page fault @ 158d9b9c
+shell> gcc
+admin gcc
+gcc: command not found
+shell> cat notThere
+admin cat notThere
+notThere
+cat: notThere: No such file or directory
+shell> shutdown
+admin shutdown
+
 *** System Shutdown ***
-----> timeout <----

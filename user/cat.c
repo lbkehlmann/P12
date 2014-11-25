@@ -27,6 +27,6 @@ int main(int argc, char** argv, char* user) {
     	}
     }
     
-    puts("Cat is done\n");
+    //puts("Cat is done\n");
     return 0;
 }

@@ -50,15 +50,12 @@
 > f1.txt
 62a81
 > f2.txt
-69,74c88,89
-< shell> gcc
-< gcc: command not found
-< shell> cat notThere
-< cat: notThere: No such file or directory
-< shell> shutdown
-< 
----
+68a88
 > Cat is done
-> [PANIC] page fault @ 158d9b9c
-75a91
-> ----> timeout <----
+69a90
+> admin gcc
+71a93,94
+> admin cat notThere
+> notThere
+73a97
+> admin shutdown
