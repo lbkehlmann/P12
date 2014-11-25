@@ -24,7 +24,7 @@ expect "shell> "
 send "cat f1.txt\r"
 
 expect "shell> "
-send " f1.txt\r"
+send " test1.txt\r"
 
 expect "shell> "
 send "cat f1.txt f2.txt\r"

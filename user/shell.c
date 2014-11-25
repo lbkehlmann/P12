@@ -71,8 +71,9 @@ char* stripSpace(char* string){
     return newString;
 }
 
-int main() {
+int main(/*,//,const char * user*/) {
     while (1) {
+      
         puts("shell> "); 
         char* in = gets();
         in = stripSpace(in);

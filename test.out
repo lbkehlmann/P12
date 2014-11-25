@@ -16,7 +16,7 @@ test0.txt
 test1.txt
 test2.txt
 test3.txt
-filePerms.tx
+filePerm.txt
 users.txt
 shutdown
 shutdown.c
@@ -38,9 +38,10 @@ I know how to handle spaces
 shell> cat f1.txt
 This is f1
 It contains text
-shell>  f1.txt
-This is f1
-It contains text
+shell>  test1.txt
+this file is test1
+111
+111
 shell> cat f1.txt f2.txt
 This is f1
 It contains text

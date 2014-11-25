@@ -148,6 +148,8 @@ long Process::execv(const char* fileName, SimpleQueue<const char*> *args, long a
     long* stringSpace = (long*)(memory + argc + 0x100);
     
     int i = 0;
+   
+    //removeHead -> own address 0xff000000
 
     while(!(*args).isEmpty()){
         //copy from simplequeue to 0xf0000000
@@ -162,10 +164,13 @@ long Process::execv(const char* fileName, SimpleQueue<const char*> *args, long a
         i++;
     }
 
+    //long users = 0xfffffff8;
     long uargs = 0xfffffff4;
     long uargc = 0xfffffff0;
+    
 
     *(long*)uargs = 0xf0000000;
+    //*(long*)user = 0xff000000;
     *(long*)uargc = argc; 
     
     /* clear resources */
