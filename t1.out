@@ -9,8 +9,11 @@ Pit::init requested:1000Hz, actual:1000Hz
 [] loaded driver for hdd
 [] initialized root filesystem
 [] Let there be processes
+username> user
+user: user not found
+username> ender
 shell> ls
-admin ls
+ender ls
 chuser.c
 chuser
 test0.txt
@@ -33,22 +36,20 @@ f1.txt
 f2.txt
 panic
 shell> echo This is cool
-admin echo This is cool
+ender echo This is cool
 This is cool
 shell>     echo    I know    how  to         handle  spaces   
-admin echo I know how to handle spaces
+ender echo I know how to handle spaces
 I know how to handle spaces
 shell> cat f1.txt
-admin cat f1.txt
+ender cat f1.txt
 f1.txt
 This is f1
 It contains text
-Cat is done
 shell>  test1.txt
-admin test1.txt
-Cat is done
+ender test1.txt
 shell> cat f1.txt f2.txt
-admin cat f1.txt f2.txt
+ender cat f1.txt f2.txt
 f1.txt
 This is f1
 It contains text
@@ -59,12 +60,10 @@ f2.txt
 3333
 44444
 555555
-Cat is done
 shell> f2.txt f1.txt
-admin f2.txt f1.txt
-Cat is done
+ender f2.txt f1.txt
 shell> cat f1.txt f2.txt f1.txt f2.txt
-admin cat f1.txt f2.txt f1.txt f2.txt
+ender cat f1.txt f2.txt f1.txt f2.txt
 f1.txt
 This is f1
 It contains text
@@ -85,15 +84,14 @@ f2.txt
 3333
 44444
 555555
-Cat is done
 shell> gcc
-admin gcc
+ender gcc
 gcc: command not found
 shell> cat notThere
-admin cat notThere
+ender cat notThere
 notThere
 cat: notThere: No such file or directory
 shell> shutdown
-admin shutdown
+ender shutdown
 
 *** System Shutdown ***

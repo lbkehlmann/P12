@@ -105,7 +105,7 @@ int main(long d1, long d2, const char * user) {
 
         char* in = gets();
         char * nin = stripSpace(in);
-        
+        //puts(in);
         /*
         int i = 0;
         while(tokens[i] != 0){

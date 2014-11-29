@@ -1,1 +1,1 @@
-chuser.o: chuser.c
+chuser.o: chuser.c libc.h sys.h

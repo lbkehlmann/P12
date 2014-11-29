@@ -11,11 +11,11 @@ long Init::run() {
     SimpleQueue<const char*> argv;
     argv.addTail(K::strdup("admin"));
 
-    argv.addTail(K::strdup("shell"));
-    //argv.addTail(K::strdup("chuser"));
+    //argv.addTail(K::strdup("shell"));
+    argv.addTail(K::strdup("chuser"));
 
-    execv("shell",&argv,1);
-    //execv("chuser, &argv, 1")
+    //execv("shell",&argv,2);
+    execv("chuser", &argv, 2);
 
     Debug::shutdown("What?");
     return 0;

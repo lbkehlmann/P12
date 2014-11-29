@@ -1,5 +1,9 @@
-12a13,21
-> admin ls
+11a12,14
+> username> user
+> user: user not found
+> username> ender
+12a16,24
+> ender ls
 > chuser.c
 > chuser
 > test0.txt
@@ -8,30 +12,26 @@
 > test3.txt
 > filePerm.txt
 > users.txt
-26a36
-> admin echo This is cool
-28a39
-> admin echo I know how to handle spaces
-30a42,43
-> admin cat f1.txt
+26a39
+> ender echo This is cool
+28a42
+> ender echo I know how to handle spaces
+30a45,46
+> ender cat f1.txt
 > f1.txt
-33,35c46,49
+33,35c49,50
 < shell>  f1.txt
 < This is f1
 < It contains text
 ---
-> Cat is done
 > shell>  test1.txt
-> admin test1.txt
-> Cat is done
-36a51,52
-> admin cat f1.txt f2.txt
+> ender test1.txt
+36a52,53
+> ender cat f1.txt f2.txt
 > f1.txt
-38a55
+38a56
 > f2.txt
-44a62
-> Cat is done
-46,51c64,65
+46,51c64
 < 0
 < 11
 < 222
@@ -39,23 +39,20 @@
 < 44444
 < 555555
 ---
-> admin f2.txt f1.txt
-> Cat is done
-52a67,68
-> admin cat f1.txt f2.txt f1.txt f2.txt
+> ender f2.txt f1.txt
+52a66,67
+> ender cat f1.txt f2.txt f1.txt f2.txt
 > f1.txt
-54a71
+54a70
 > f2.txt
-60a78
+60a77
 > f1.txt
-62a81
+62a80
 > f2.txt
-68a88
-> Cat is done
-69a90
-> admin gcc
-71a93,94
-> admin cat notThere
+69a88
+> ender gcc
+71a91,92
+> ender cat notThere
 > notThere
-73a97
-> admin shutdown
+73a95
+> ender shutdown
