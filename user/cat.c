@@ -27,15 +27,17 @@ int getNextFile(char* perms, char* dest, int offset){
 
 int main(int argc, char** argv, char* user) {
     
-    long filePerm = open("filePerm");
-    long permLen = getlen(filePerm);
-    
-    char perms[permLen];
-    int offset = 0;
-
-    readFully(filePerm, perms, permLen);
 
     for(int i = 1; i < argc; i++){
+
+        long filePerm = open("filePerm");
+        long permLen = getlen(filePerm);
+
+        char perms[permLen];
+        int offset = 0;
+
+        readFully(filePerm, perms, permLen);
+
     	char* fileName = argv[i];
         //puts(fileName);
         //puts("\n");
@@ -45,7 +47,7 @@ int main(int argc, char** argv, char* user) {
     		puts("cat: ");
             puts(fileName);
             puts(": No such file or directory\n");
-    		return 0;
+    		continue;
     	}
         
 
