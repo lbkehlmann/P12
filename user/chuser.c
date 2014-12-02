@@ -28,7 +28,7 @@ char ** loadUsers(){
 char* findUser(char ** users, char* in){
 	for(int i = 0; i < numUsers; i++){
 		int found = 1;
-		for(int j = 0; j < 8 && found; j++){
+		for(int j = 0; j < 9 && found; j++){
 			if(in[j] == 0)
 				return in;
 			if(users[i][j] != in[j])

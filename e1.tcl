@@ -17,7 +17,7 @@ send "user\r"
 expect "username> "
 send "ender\r"
 
-expect "shell> "
+expect "ender> "
 send "shutdown\r"
 
 expect "*** System Shutdown ***\r"

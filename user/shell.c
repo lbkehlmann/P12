@@ -98,10 +98,11 @@ char* concat(const char * s1, const char * s2){
 
 }
 
-int main(long d1, long d2, const char * user) {
+int main(long d1, long d2, char * user) {
     while (1) {
       
-        puts("shell> ");
+        puts(user);
+        puts("> ");
 
         char* in = gets();
         char * nin = stripSpace(in);
@@ -117,7 +118,7 @@ int main(long d1, long d2, const char * user) {
         if(in[0] != 0){
             nin = concat(" ", nin);
             nin = concat(user, nin);
-            puts(nin);
+            //puts(nin);
 
             char** tokens = tokenize(nin);
             
