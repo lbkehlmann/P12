@@ -12,7 +12,7 @@ int main(long argc, long argv, char * user) {
 
 	long filePerm = open("filePerm");
 	long permLen = getlen(filePerm);
-	//puthex(permLen);
+	
 	char perms[permLen];
 	int offset = 0;
 
