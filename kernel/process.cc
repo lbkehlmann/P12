@@ -134,8 +134,8 @@ long Process::execv(const char* fileName, SimpleQueue<const char*> *args, long a
         return ERR_NOT_FOUND;
     }
 
-    char* name = new char[K::strlen(fileName)];
-    memcpy(name, fileName, K::strlen(fileName));
+    char* name = new char[K::strlen(fileName) + 1];
+    memcpy(name, fileName, K::strlen(fileName) + 1);
 
     //Debug::printf("%s\n", name);
 
@@ -192,9 +192,11 @@ long Process::execv(const char* fileName, SimpleQueue<const char*> *args, long a
     if(hdr.e_ident[0] != 0x7f){
 
         SimpleQueue<const char*> * nargs = new SimpleQueue<const char *>();
+//        Debug::printf("%s\n", username);
+        nargs->addTail(username);
         nargs->addTail("cat");
         nargs->addTail(name);
-        execv("cat", nargs, 2);
+        execv("cat", nargs, 3);
     }
 
     uint32_t hoff = hdr.e_phoff;

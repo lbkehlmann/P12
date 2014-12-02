@@ -122,7 +122,7 @@ int main(long d1, long d2, char * user) {
 
             char** tokens = tokenize(nin);
             
-            puts("\n");
+            //puts("\n");
 
             int id = fork();
             if(id == 0){

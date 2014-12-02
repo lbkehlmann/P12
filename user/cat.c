@@ -4,8 +4,8 @@ int main(int argc, char** argv, char* user) {
     
     for(int i = 1; i < argc; i++){
     	char* fileName = argv[i];
-        puts(fileName);
-        puts("\n");
+        //puts(fileName);
+        //puts("\n");
     	long file = open(fileName);
     	if(file == -1001){
     		puts("cat: ");
@@ -30,3 +30,19 @@ int main(int argc, char** argv, char* user) {
     //puts("Cat is done\n");
     return 0;
 }
+
+/*
+int getPerm(char* user){
+    for(int i = 0; i < numUsers; i++){
+        int found = 1;
+        for(int j = 0; j < 9 && found; j++){
+            if(in[j] == 0)
+                return in;
+            if(users[i][j] != in[j])
+                found = 0;
+        }
+        if(found)
+            return in;
+    }
+}
+*/
