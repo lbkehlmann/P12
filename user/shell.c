@@ -102,7 +102,7 @@ int main(long d1, long d2, char * user) {
     while (1) {
       
         int i = 0;
-        while(user[i]!=' '){
+        while(i<8 && user[i]!=' '){
             putchar(user[i]);
             i++;
         }

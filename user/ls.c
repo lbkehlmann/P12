@@ -42,7 +42,7 @@ int main(long argc, long argv, char * user) {
 		else if(permType == 'u'){
 			int index = 0;
 			permission = 1;
-			while(perms[offset] && user[index] && user[index]!=' '){
+			while(perms[offset] && user[index] && user[index]!=' ' && index < 8){
 				if(perms[offset] != user[index]){
 					permission = 0;
 					break;

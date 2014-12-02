@@ -28,7 +28,7 @@ char ** loadUsers(){
 char* findUser(char ** users, char* in){
 	for(int i = 0; i < numUsers; i++){
 		int found = 1;
-		for(int j = 0; j < 9 && found; j++){
+		for(int j = 0; j < 8 && found; j++){
 			if(in[j] == 0 && users[i][j] == ' ')
 				return users[i];
 			if(users[i][j] != in[j])
@@ -38,6 +38,7 @@ char* findUser(char ** users, char* in){
 			return users[i];
 	}
 	notFound(in);
+	free(in);
 	return "";
 }
 
@@ -45,18 +46,21 @@ int main(int argc, char ** argv, char* user){
 
 	char** users = loadUsers();
 	char* correctUser = "";
+	
 
 	while(correctUser[0] == 0){
+		char* in;
 		puts("enter valid username> ");
-		char* in = gets();
+		in = gets();
 		correctUser = findUser(users, in);
 	}
-	//puts(in);
+	//puts(correctUser);
+	//puts("\n");
 
-	char** args = malloc(16);
-	args[0] = correctUser;
-	args[1] = "shell";
-	execv("shell", args);
+	argv[0] = correctUser;
+	argv[1] = "shell";
+	//puts("ok\n");
+	execv("shell", argv);
     
     return 0;
     

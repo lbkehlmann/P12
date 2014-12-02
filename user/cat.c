@@ -66,10 +66,10 @@ int main(int argc, char** argv, char* user) {
             else if(permType == 'u'){
                 int index = 0;
                 permission = 1;
-                while(perms[offset] && user[index] && user[index]!=' '){
+                while(perms[offset] && user[index] && user[index]!=' ' && index < 8){
                     if(perms[offset] != user[index]){
                         permission = 0;
-                        while(perms[offset++]!=' '){}
+                        while(perms[++offset]!=' '){}
                         break;
                     }
                     index++;
@@ -81,7 +81,7 @@ int main(int argc, char** argv, char* user) {
             offset = getNextFile(perms, dest, offset);
             
             int i = 0;
-            putdec(permission);
+            //putdec(permission);
             //puts(dest);
             //puts("\n");
 
@@ -91,6 +91,10 @@ int main(int argc, char** argv, char* user) {
                     break;
                 }
                 i++;
+            }
+
+            if(fileName[i]!=0){
+                permission = 0;
             }
 
             if(permission == 1)
