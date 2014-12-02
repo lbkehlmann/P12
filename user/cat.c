@@ -15,7 +15,8 @@ int main(int argc, char** argv, char* user) {
     		return 0;
     	}
 
-        long permFile = open("filePerm.txt");
+        //long permFile = 
+	open("filePerm.txt");
         
 
     	char buffer[100];

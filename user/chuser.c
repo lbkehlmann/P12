@@ -47,7 +47,7 @@ int main(int argc, char ** argv, char* user){
 	char* correctUser = "";
 
 	while(correctUser[0] == 0){
-		puts("username> ");
+		puts("enter valid username> ");
 		char* in = gets();
 		correctUser = findUser(users, in);
 	}
