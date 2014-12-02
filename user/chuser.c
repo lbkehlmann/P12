@@ -30,12 +30,12 @@ char* findUser(char ** users, char* in){
 		int found = 1;
 		for(int j = 0; j < 9 && found; j++){
 			if(in[j] == 0)
-				return in;
+				return users[i];
 			if(users[i][j] != in[j])
 				found = 0;
 		}
 		if(found)
-			return in;
+			return users[i];
 	}
 	notFound(in);
 	return "";
