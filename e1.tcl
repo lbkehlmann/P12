@@ -1,6 +1,6 @@
 #!/usr/bin/expect
 
-set timeout 10
+set timeout 20
 
 expect_after {
     timeout {
@@ -11,5 +11,15 @@ expect_after {
 
 spawn qemu-system-x86_64 -nographic --serial mon:stdio -hdc kernel/kernel.img -hdd fat439/user.img
 
+expect "username> "
+send "user\r"
+
+expect "username> "
+send "ender\r"
+
 expect "shell> "
-send "echo This is cool\r"
+send "shutdown\r"
+
+expect "*** System Shutdown ***\r"
+send \001
+send "x"

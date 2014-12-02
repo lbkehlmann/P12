@@ -1,58 +1,68 @@
-11a12,14
-> username> user
-> user: user not found
-> username> ender
-12a16,24
-> ender ls
-> chuser.c
-> chuser
-> test0.txt
-> test1.txt
-> test2.txt
-> test3.txt
-> filePerm.txt
-> users.txt
-26a39
-> ender echo This is cool
-28a42
-> ender echo I know how to handle spaces
-30a45,46
-> ender cat f1.txt
-> f1.txt
-33,35c49,50
+12,72c12,14
+< shell> ls
+< shutdown
+< shutdown.c
+< shell.c
+< shell
+< ls.c
+< ls
+< echo
+< echo.c
+< cat.c
+< cat
+< f1.txt
+< f2.txt
+< panic
+< shell> echo This is cool
+< This is cool
+< shell>     echo    I know    how  to         handle  spaces   
+< I know how to handle spaces
+< shell> cat f1.txt
+< This is f1
+< It contains text
 < shell>  f1.txt
 < This is f1
 < It contains text
----
-> shell>  test1.txt
-> ender test1.txt
-36a52,53
-> ender cat f1.txt f2.txt
-> f1.txt
-38a56
-> f2.txt
-46,51c64
+< shell> cat f1.txt f2.txt
+< This is f1
+< It contains text
 < 0
 < 11
 < 222
 < 3333
 < 44444
 < 555555
+< shell> f2.txt f1.txt
+< 0
+< 11
+< 222
+< 3333
+< 44444
+< 555555
+< shell> cat f1.txt f2.txt f1.txt f2.txt
+< This is f1
+< It contains text
+< 0
+< 11
+< 222
+< 3333
+< 44444
+< 555555
+< This is f1
+< It contains text
+< 0
+< 11
+< 222
+< 3333
+< 44444
+< 555555
+< shell> gcc
+< gcc: command not found
+< shell> cat notThere
+< cat: notThere: No such file or directory
 ---
-> ender f2.txt f1.txt
-52a66,67
-> ender cat f1.txt f2.txt f1.txt f2.txt
-> f1.txt
-54a70
-> f2.txt
-60a77
-> f1.txt
-62a80
-> f2.txt
-69a88
-> ender gcc
-71a91,92
-> ender cat notThere
-> notThere
-73a95
+> username> user
+> user: user not found
+> username> ender
+73a16
 > ender shutdown

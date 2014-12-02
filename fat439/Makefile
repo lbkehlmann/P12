@@ -12,7 +12,7 @@ mkfs : mkfs.o
 .SECONDARY :
 
 
-FILES = ../user/chuser.c ../user/chuser test0.txt test1.txt test2.txt test3.txt filePerm.txt users.txt ../user/shutdown ../user/shutdown.c ../user/shell.c ../user/shell ../user/ls.c ../user/ls ../user/echo ../user/echo.c ../user/cat.c ../user/cat f1.txt f2.txt panic
+FILES = ../user/shutdown ../user/shutdown.c ../user/chuser.c ../user/chuser ../user/shell.c ../user/shell ../user/ls.c ../user/ls ../user/echo ../user/echo.c ../user/cat.c ../user/cat test0.txt test1.txt test2.txt test3.txt filePerm.txt users.txt panic
 
 ../user/% :
 	make -C ../user
