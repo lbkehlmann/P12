@@ -6,6 +6,7 @@ int main(int argc, char** argv, char* user) {
     	char* fileName = argv[i];
         //puts(fileName);
         //puts("\n");
+
     	long file = open(fileName);
     	if(file == -1001){
     		puts("cat: ");
@@ -13,6 +14,9 @@ int main(int argc, char** argv, char* user) {
     		puts(": No such file or directory\n");
     		return 0;
     	}
+
+        long permFile = open("filePerm.txt");
+        
 
     	char buffer[100];
     	long bytesRead = 1;
