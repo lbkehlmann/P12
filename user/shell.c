@@ -101,7 +101,11 @@ char* concat(const char * s1, const char * s2){
 int main(long d1, long d2, char * user) {
     while (1) {
       
-        puts(user);
+        int i = 0;
+        while(i<8 && user[i]!=' '){
+            putchar(user[i]);
+            i++;
+        }
         puts("> ");
 
         char* in = gets();
@@ -115,13 +119,15 @@ int main(long d1, long d2, char * user) {
             i++;
         }
         */
+
+
         if(in[0] != 0){
             nin = concat(" ", nin);
-            nin = concat(user, nin);
+            nin = concat("user", nin);
             //puts(nin);
 
             char** tokens = tokenize(nin);
-            
+            tokens[0] = user;
             //puts("\n");
 
             int id = fork();
