@@ -9,10 +9,34 @@ Pit::init requested:1000Hz, actual:1000Hz
 [] loaded driver for hdd
 [] initialized root filesystem
 [] Let there be processes
-username> user
+enter valid username> user
 user: user not found
-username> ender
-shell> shutdown
-ender shutdown
+enter valid username> ender
+ender> ls
+shutdown
+chuser
+shell
+ls
+echo
+cat
+test1.txt
+panic
+ender> cat test1.txt
+this file is test1
+111
+111
+ender> chuser
+enter valid username> admin
+admin> users.txt
+admin   0
+ender   1
+bean    1
+valentin2
+peter   3
+admin> chuser
+enter valid username> peter
+peter> test0.txt
+cat: test0.txt: No such file or directory
+peter> shutdown
 
 *** System Shutdown ***
