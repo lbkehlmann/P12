@@ -1,23 +1,9 @@
+Report.txt
 
-- Explain how the arguments make it all the way from user program invoking
-  execv until they turn into main's argc, and argv for the target program
+Our project introduced the notion of users and permissions to our file system. 
 
-The arguments are first tokenized and placed as arguments in a system call. The system call then moves the arguments into a SimpleQueue and passed to execv. In execv the location of the arguments is placed on the user stack in the location relative to the stack pointer so that they are read as arguments in the user space (The actual arguments are also stored in user memory).
+First within fat439 we created 2 files; users.txt and filePerm.txt. User.txt holds entries for each username. These entries are the username (max of 8 characters) followed by a space and the users permission level. The permissions start with 0 as the level with the most permissions. Permissions decrease as level increases. Each user entry is separated by a new line. The second file, filePerm.txt has file entries separated by new lines as well. Each entry begins with an l which represents level or a u which represents user. If the first character is an m it is followed by a space and the maximum level of a user allowed to access it, then another space, and then the file name. If the first character is a u it is followed by a space and the username of the files owner, then another space, and then the file name. A file owned by a particular individual cannot be accessed by any other user. A file which is protected only by a permission level can be accessed by anyone at the same permission level or lower.
 
-Then in the user program, the pointer to the arguments is conveniently located above the stack pointer. 
+The first step we took was to redirect init.cc to execv our own program, chuser (change user). This initialized a modified version of the shell which asks the user to enter a valid username. No other files can be accessed until a valid username is entered. Once a username is entered, the user may log out at any time by typing the command chuser and log back in by typing another username. Once a user has put in a valid username, we execv into shell. We added a third optional argument to execv: the username. This username includes the users level of permissions. This allowed us to more easily access the users permission for level checks in user code.
 
-- My implementation of execv in syscall.cc is not secure. Show a user
-  program that can read any memory address by exploiting my bad code
-
-A user program could pass in a pointer to memory as the arguments, and execv would blindly read from memory and pass it back to the user as arguments. By making a sneaky execv syscall, you could read any memory address.
-
-- How would change the code to protect against this attack
-
-We can add a check in the system call handler to make sure that the memory is from the user space and deny the system call if the user attempts to execv with kernal memory.
-
-- What do we need to change in order to implement input and output
-  redirection and pipes in the shell?
-
-First we would need a dup system call that allowed the modification of the file descriptors. By opening (or in the case of output, creating) a file and then assigning it the correct File Descriptor number (0 for in, 1 for out) the shell will automatically write its output to the new file. 
-
-For pipes, we also need to implement some kind of bounded buffer so that the second command can wait on the pipe until after the first command writes to it, then uses the contents of the pipe as input. 
+Next we modified all commands accessing any files in fat439, most notably ls and cat. Ls checks the users permissions against the files permissions and only prints those the user has access to view. Cat ensures that the user trying to access a certain file has permission to do so, and then prints the file if it exists.
